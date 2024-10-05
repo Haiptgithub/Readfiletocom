@@ -42,16 +42,16 @@ void sendByCharacter(FILE *file, HANDLE hComm) {
 
 int main() {
     // Mo file bin trong o E voi tên 'input.bin'
-    FILE *file = fopen("E:\\filebin.bin", "rb"); 
+    FILE *file = fopen("D:\\filebin.bin", "rb"); 
     if (!file) {
-        printf("Khong the mo file 'input.bin' trong o E\n");
+        printf("Khong the mo file 'input.bin' trong o D\n");
         return 1;
     }
 
     // Mo cong COM9 (PL2303) de truyen du lieu
-    HANDLE hComm = CreateFile("\\\\.\\COM9", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
+    HANDLE hComm = CreateFile("\\\\.\\COM1", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
     if (hComm == INVALID_HANDLE_VALUE) {
-        printf("Khong the mo cong COM9\n");
+        printf("Khong the mo cong COM1\n");
         fclose(file);
         return 1;
     }
